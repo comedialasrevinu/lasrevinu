@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comedia Las Revinu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+    .header {
+      background: linear-gradient(45deg, #ff5f6d, #ffc371);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .header p {
+      font-size: 1.2rem;
+    }
+    .navbar {
+      background-color: #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+    .navbar li {
+      margin: 0 15px;
+    }
+    .navbar a {
+      color: white;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+    .navbar a:hover {
+      background-color: #575757;
+      border-radius: 5px;
+    }
+    main section {
+      padding: 40px 20px;
+      margin: 20px auto;
+      max-width: 900px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    section h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #ff5f6d;
+    }
+    section p {
+      font-size: 1.1rem;
+    }
+    .event-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      background: #fff;
+      max-width: 700px;
+    }
+    .event-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #ff5f6d;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    form button {
+      background: #ff5f6d;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 20px;
+    }
+  /* Evento card */
+.event-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  background: #fff;
+  max-width: 700px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Alineación del texto a la izquierda */
+}
+
+.event-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #ff5f6d;
+}
+.logo {
+  position: absolute;
+  top: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.left-logo {
+  left: 10px;
+}
+
+.right-logo {
+  right: 10px;
+}
+
+/* Confetti */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff4d4d;
+  animation: confetti-fall 3s infinite;
+  border-radius: 50%;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+.logo {
+  position: absolute;
+  top: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  width: 280px;  /* Ajusta este valor para cambiar el tamaño */
+}
+
+.left-logo {
+  left: 20px;
+}
+
+.right-logo {
+  right: 20px;
+}
+
+
+/* Ajuste para los márgenes */
+section img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  max-width: 100%; /* Hace que la imagen se ajuste al tamaño del contenedor */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+  </style>
+</head>
+<body>
+  <img src="izquierda.png" alt="Logo Izquierda" class="logo left-logo">
+
+<img src="https://static.vecteezy.com/system/resources/previews/011/287/678/non_2x/10-years-anniversary-golden-png.png" alt="Logo Derecha" class="logo right-logo" onclick="launchConfetti('right')">
+
+  <header class="header">
+    <div class="container">
+      <h1>Comedia Las Revinu</h1>
+      <p>¡La mejor organización de comedia para alegrar tu día!</p>
+    </div>
+  </header>
+  <nav class="navbar">
+    
+
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#eventos">Eventos</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="inicio" class="inicio">
+      <h2>Bienvenido a Comedia Las Revinu</h2>
+      <p>Comedia Las Revinu es una organización pionera en el mundo del humor y el entretenimiento en la región. Nos enfocamos en la comedia, los eventos y la alegría, creando experiencias inolvidables para todos nuestros asistentes.</p>
+      <img src="https://pxbcdn.elchubut.com.ar/chubut/122021/1639528723139.webp?cw=1315&ch=749&extw=jpg"  />
+      <p>Este 2024 celebramos nuestro décimo aniversario con la adaptación teatral de la ópera *Carmen*, un evento que promete sorprender y divertir al público.</p>
+    </section>
+
+    <section id="eventos" class="eventos">
+      <h2>Próximos Eventos</h2>
+      <div class="event-card">
+        <h3>Carmen: La Ópera en Madryn</h3>
+        <p>Fecha: 17 de Noviembre </p>
+        <p>Ubicación: Teatro de Puerto Madryn</p>
+        <p>La Comedia Las Revinu celebra su 10 aniversario con una producción especial de la famosa ópera *Carmen*. ¡No te lo pierdas!</p>
+        <img src="https://pxbcdn.elchubut.com.ar/chubut/112024/1731794560261.webp?cw=1315&ch=749&extw=jpg" alt="Carmen evento" />
+        Desde los primeros acordes, la música de Carmen los envolvió con su fuerza arrolladora. La adaptación especial de la célebre ópera de Georges Bizet, llevada a escena por la Comedia Las Revinú para celebrar su décimo aniversario, resultó ser una obra maestra en sí misma. Una producción que logró lo impensable: entrelazar la excelencia técnica de artistas consagrados con la frescura y la energía de estudiantes secundarios que dieron vida a las escenas con un entusiasmo conmovedor.
+Desde los primeros compases, Carmen atrapó al público con la fuerza de su voz y la intensidad de sus interpretaciones. En el centro del escenario, la mezzosoprano Anabella Carnevali, en el papel protagónico, fue el centro de atención con una actuación atrapante. Su voz transmitió con precisión la personalidad de Carmen: apasionada, desafiante y llena de fuerza. Frente a ella, Dardo Varela encarnó a Don José con una interpretación cargada de emoción, que mostró la fragilidad y desesperación de su personaje.
+Sophia Haro, como Micaela, aportó momentos de ternura y calma, mientras que Román Coccalotto destacó como Escamillo, dando vida a un torero carismático que llenaba el escenario con su presencia. Los jóvenes cantantes locales Clara Villar Brunetti, Paloma García Mendioroz y Augusto Mendoza sumaron su energía y talento a la producción, mostrando el potencial de las nuevas generaciones de artistas.
+
+ 
+
+Alumnos a la escena
+Pero si algo hizo especial esta versión de Carmen, fue la participación de los estudiantes secundarios. Verlos moverse con tanta naturalidad y pasión, mientras acompañaban las escenas principales con actuaciones corales, fue una lección de cómo el arte puede trascender barreras generacionales.
+Ellos no solo estuvieron allí para llenar el espacio; se integraron de tal manera que su presencia amplificó el dramatismo y la vitalidad de cada escena.
+La dirección de Nelson Coccalotto permitió que la producción mantuviera la esencia de la obra original de Bizet mientras incorporaba elementos que la acercaran al público actual. Diego Cacciavillani, a cargo de la producción integral, también merece reconocimiento por cuidar cada detalle, desde la iluminación hasta el vestuario, para garantizar una experiencia visual y sonora inolvidable.
+El evento, apoyado por instituciones como Aluar, CAMAD, Conciencia Colectiva y el Comedor Infantil de Puerto Madryn, fue más que una representación operística. Fue una iniciativa cultural que buscó conectar con la comunidad y demostrar que el arte lírico puede ser accesible y cercano.
+Uno de los momentos más emotivos llegó al final, cuando el elenco completo recibió una ovación de pie. Fue un reconocimiento no solo a la calidad artística del espectáculo, sino también al esfuerzo colectivo de unir a generaciones y sectores diversos a través del arte.
+      </div>
+      <div class="event-card">
+        <h3>Varieté Amour</h3>
+        <p>Fecha: 15 de Diciembre</p>
+        <p>Hora: 8:00 PM</p>
+        <p>Ubicación: Sala 1 cine teatro auditorium</p>
+        <p>Un show que combina arte, humor y solidaridad. ¡Una noche única de risas y emoción! 
+        </p>
+        <img src="https://lu17.com/download/multimedia.normal.866fde8e2170dc74.V2hhdHNBcHAgSW1hZ2UgMjAyMy0xMi0wNiBhdCAxOC5fbm9ybWFsLndlYnA%3D.webp" 
+      </div>
+      "Varieté Amour" no es solo un espectáculo; es una celebración del corazón humano, donde cada número artístico ha sido seleccionado para representar los diferentes aspectos del amor, creando una narrativa que resonará con el público de todas las edades.
+
+La cita será el domingo 15 de diciembre a las 20 horas en la sala 1 del Cine Teatro Auditorium.
+
+Este evento familiar también tiene un corazón solidario ya que es un gesto de amor y generosidad por lo cual se invita al público a participar de una acción benéfica: el valor de la entrada es un juguete nuevo, que será destinado a comedores y merenderos de Puerto Madryn. Para aquellos que deseen colaborar pero no
+puedan asistir, se recibirán donaciones de juguetes en el Cine Teatro Auditorium el mismo domingo a las 20 horas.
+
+"Varieté Amour" cuenta con el apoyo de organizaciones como ALUAR, INFA, CAMAD, Conciencia Colectiva, Comedor infantil y Escuela de la Costa reforzando el compromiso de la comunidad con las iniciativas artísticas y solidarias.
+
+Las entradas están disponibles en la boletería del Cine Teatro Auditorium, a cambio de un juguete nuevo.
+    </section>
+
+    <section id="nosotros" class="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <p>Comedia Las Revinú tiene historia...
+Desde su nacimiento en 2014 en la Escuela de la Costa de Puerto Madryn, la compañía teatral
+Comedia Las Revinú ha marcado un hito en el panorama cultural, destacándose por su enfoque en el
+protagonismo adolescente en las artes escénicas. Con una trayectoria que incluye obras teatrales,
+musicales y danza-teatro, esta compañía ha llevado su talento más allá de las fronteras de Chubut,
+llegando incluso a Buenos Aires.
+
+Sus inicios fueron prometedores, con el drama “Tensión” ganando el primer puesto en la final de los
+"Evita Culturales de la Provincia de Chubut" en 2015. Desde entonces, la Compañía ha seguido
+cosechando éxitos y reconocimientos, tanto del público como de la crítica, con propuestas como
+“Insuferata” y “Ella debe morir, historia de un femicidio”.
+
+El año 2019 marcó un punto de inflexión con la presentación del musical “Solo Ana”, inspirado en la
+vida de Ana Frank, en el Centro Cultural 25 de Mayo de Buenos Aires. Este musical, que fue
+seleccionado en el XI Festival Mundial de Teatro Adolescente Vamos que Venimos, recibió
+reconocimiento del jurado por su compromiso social, su abordaje interdisciplinario y su cuidada puesta
+en escena.
+
+En 2020, pese a las dificultades impuestas por la pandemia, Comedia Las Revinú exploró nuevas
+vertientes artísticas, desde la composición musical hasta la adaptación del libro ilustrado “El viejo y el
+mar”. Ese año, la compañía también organizó un concurso de creaciones animadas y presentó su
+espacio cultural, equipado con una sala técnica, cine-teatro, camarines, vestuario, radio y estudio de
+grabación.Comedia Las Revinu nació en 2014 con el objetivo de llevar la comedia de calidad a toda la comunidad. A lo largo de los años, hemos producido una serie de eventos exitosos, desde obras de teatro hasta shows solidarios, siempre con un enfoque en la diversión y el entretenimiento.</p>
+      <p>En el año 2024, celebramos nuestro 10º aniversario con una producción especial, una adaptación única de la ópera *Carmen* que será todo un hito en la región.</p>
+      <img src="https://pxbcdn.elchubut.com.ar/chubut/092024/1725553102093.webp?cw=1315&ch=749&extw=jpg"
+       />
+    </section>
+
+    <section id="contacto" class="contacto">
+      <h2>Contáctanos</h2>
+      <form id="contact-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+ <div class="social-media">
+    <a href="https://www.instagram.com/comedia.lasrevinu/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="Instagram" style="width: 40px; height: 40px; margin-top: 20px;">
+    </a>
+  <footer class="footer">
+    <p>&copy; 2024 Comedia Las Revinu. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('¡Gracias por contactarnos! Responderemos a la brevedad.');
+    });
+    function launchConfetti(side) {
+  for (let i = 0; i < 30; i++) {
+    let confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.backgroundColor = getRandomColor();
+    confetti.style.left = (Math.random() * window.innerWidth) + 'px';
+    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+      confetti.remove();
+    }, 3000);
+  }
+}
+
+function getRandomColor() {
+  const colors = ['#ff4d4d', '#4dff4d', '#4d4dff', '#fffb4d', '#ff7f7f', '#7f7fff'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+<script>
+  function lanzarConfeti() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { x: Math.random(), y: Math.random() },
+      colors: ['#ff0', '#0f0', '#00f', '#f00']
+    });
+  }
+
+  document.querySelector('.left-logo').addEventListener('click', lanzarConfeti);
+  document.querySelector('.right-logo').addEventListener('click', launchConfeti);
+</script>
+
+
+  </script>
+
+</body>
+</html>
+
